@@ -5,6 +5,9 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
+// Import Routes
+const authRoutes = require("./routes/auth");
+
 require("dotenv").config();
 
 //App
@@ -23,12 +26,8 @@ app.use(morgan("dev"));
 app.use(bodyParser.json({ limit: "2mb" }));
 app.use(cors());
 
-// Routes
-app.get("/api", (req, res) => {
-    res.json({
-        data: "welcome to dmasac ecommerce server",
-    });
-});
+// Routes Middleware
+app.use("/api", authRoutes);
 
 // Port
 const port = process.env.PORT || 5000;
