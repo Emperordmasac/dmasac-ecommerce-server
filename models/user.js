@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema(
             required: true,
             index: true,
         },
-        roles: {
+        role: {
             type: String,
             default: "subscriber",
         },

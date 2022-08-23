@@ -3,6 +3,7 @@ const admin = require("../firebase");
 exports.authcheck = async (req, res, next) => {
     //receive token
     console.log(req.headers);
+    // idToken comes from the client app
     try {
         const firebaseUser = await admin
             .auth()
