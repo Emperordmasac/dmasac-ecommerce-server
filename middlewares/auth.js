@@ -23,7 +23,7 @@ exports.authcheck = async (req, res, next) => {
 exports.admincheck = async (req, res, next) => {
     const { email } = req.user;
 
-    const adminUser = await User.fimdOne({ email }).exec();
+    const adminUser = await User.findOne({ email }).exec();
 
     if (adminUser.role !== "admin") {
         res.status(403).json({
