@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const { ObjectId } = mongoose.Schema;
 
 const categorySchema = new mongoose.Schema(
     {
@@ -17,7 +16,7 @@ const categorySchema = new mongoose.Schema(
             index: true,
         },
     },
-    { timestamps }
+    { timestamps: true }
 );
 
-module.exports = mongoose.nodel("Category", categorySchema);
+module.exports = mongoose.model("Category", categorySchema);
