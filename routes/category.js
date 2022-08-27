@@ -18,10 +18,10 @@ const { authcheck, admincheck } = require("../middlewares/auth");
 
 // Endpoints
 router.post("/category", authcheck, admincheck, create);
-router.get("/category", list);
-router.get("/category", authcheck, admincheck, read);
+router.get("/categories", list);
+router.get("/category/:slug", read);
 router.put("/category/:slug", authcheck, admincheck, update);
-router.post("/category/:slug", authcheck, admincheck, remove);
+router.delete("/category/:slug", authcheck, admincheck, remove);
 
 // Export Statements
 module.exports = router;
