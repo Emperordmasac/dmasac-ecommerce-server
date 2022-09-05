@@ -10,7 +10,7 @@ const subSchema = new mongoose.Schema(
             trim: true,
             required: "A Name is required",
             minlength: [2, "category name too short"],
-            maxlength: [32, "Cstegory name too long"],
+            maxlength: [32, "Category name too long"],
         },
         slug: {
             type: String,
