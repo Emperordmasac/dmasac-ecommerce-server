@@ -9,6 +9,14 @@ exports.create = async (req, res) => {
         res.json(product);
     } catch (error) {
         console.log(error);
-        res.status(400).send("error creating product. Try Again!");
+        //res.status(400).send("error creating product. Try Again!");
+        res.status(400).json({
+            error: error.message,
+        });
     }
+};
+
+exports.list = async (req, res) => {
+    let products = await Product.find({});
+    res.json(products);
 };

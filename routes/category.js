@@ -11,6 +11,7 @@ const {
     update,
     remove,
     list,
+    getSubs,
 } = require("../controllers/category");
 
 // Middlewares Import
@@ -22,6 +23,7 @@ router.get("/categories", list);
 router.get("/category/:slug", read);
 router.put("/category/:slug", authcheck, admincheck, update);
 router.delete("/category/:slug", authcheck, admincheck, remove);
+router.get("/category/subs/:_id", getSubs);
 
 // Export Statements
 module.exports = router;
