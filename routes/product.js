@@ -5,14 +5,14 @@ const express = require("express");
 const router = express.Router();
 
 // Controller Import
-const { create, list } = require("../controllers/product");
+const { create, listAll } = require("../controllers/product");
 
 // Middlewares Import
 const { authcheck, admincheck } = require("../middlewares/auth");
 
 // Endpoints
 router.post("/product", authcheck, admincheck, create);
-router.get("/products", list);
+router.get("/products/:count", listAll);
 
 // Export Statements
 module.exports = router;
